@@ -8,12 +8,7 @@ require("dotenv").config();
 
 app.use(express.json());
 app.use(
-  cors({
-    origin:
-      process.env.NODE_ENV === "production"
-        ? [process.env.REMOTE_CLIENT_URL, process.env.REMOTE_SERVER_URL]
-        : [process.env.LOCAL_CLIENT_URL, process.env.LOCAL_SERVER_URL],
-  })
+  cors()
 );
 
 
